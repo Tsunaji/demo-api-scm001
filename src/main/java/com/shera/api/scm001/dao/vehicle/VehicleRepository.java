@@ -13,5 +13,6 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Integer>, JpaS
 
     List<Vehicle> findByProcessAndPlant(String process, String plant);
 
-//    List<Vehicle> findByVehicleStatus_Status_StatusId(int statusId);
+    List<Vehicle> findByPlant(String plant);
+
 }

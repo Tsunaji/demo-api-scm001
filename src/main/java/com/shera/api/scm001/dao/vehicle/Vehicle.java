@@ -5,7 +5,6 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -33,14 +32,14 @@ public class Vehicle {
     private String license;
     private String incoterm;
     private String documentNumber;
-    private int weightFromDocument;
+    private double weightFromDocument;
     private String reasonNotInputWeight;
-    private int weightIn;
-    private int weightOut;
-    private int weightNet;
+    private double weightIn;
+    private double weightOut;
+    private double weightNet;
     private int weightDifPercent;
     private String palleteNumber;
-    private int weightPallete;
+    private double weightPallete;
     private boolean isSpecialRelease;
     private String reasonSpecialRelease;
     private String shipment;
@@ -172,11 +171,11 @@ public class Vehicle {
         this.documentNumber = documentNumber;
     }
 
-    public int getWeightFromDocument() {
+    public double getWeightFromDocument() {
         return weightFromDocument;
     }
 
-    public void setWeightFromDocument(int weightFromDocument) {
+    public void setWeightFromDocument(double weightFromDocument) {
         this.weightFromDocument = weightFromDocument;
     }
 
@@ -188,27 +187,27 @@ public class Vehicle {
         this.reasonNotInputWeight = reasonNotInputWeight;
     }
 
-    public int getWeightIn() {
+    public double getWeightIn() {
         return weightIn;
     }
 
-    public void setWeightIn(int weightIn) {
+    public void setWeightIn(double weightIn) {
         this.weightIn = weightIn;
     }
 
-    public int getWeightOut() {
+    public double getWeightOut() {
         return weightOut;
     }
 
-    public void setWeightOut(int weightOut) {
+    public void setWeightOut(double weightOut) {
         this.weightOut = weightOut;
     }
 
-    public int getWeightNet() {
+    public double getWeightNet() {
         return weightNet;
     }
 
-    public void setWeightNet(int weightNet) {
+    public void setWeightNet(double weightNet) {
         this.weightNet = weightNet;
     }
 
@@ -228,11 +227,11 @@ public class Vehicle {
         this.palleteNumber = palleteNumber;
     }
 
-    public int getWeightPallete() {
+    public double getWeightPallete() {
         return weightPallete;
     }
 
-    public void setWeightPallete(int weightPallete) {
+    public void setWeightPallete(double weightPallete) {
         this.weightPallete = weightPallete;
     }
 

@@ -9,6 +9,7 @@ public class Plant {
     @Id
     private String plantId;
     private String name;
+    private String address;
 
     public String getPlantId() {
         return plantId;
@@ -25,4 +26,18 @@ public class Plant {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Plant{" + "plantId=" + plantId + ", name=" + name + ", address=" + address + '}';
+    }
+
 }

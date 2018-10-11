@@ -24,8 +24,14 @@ public class VehicleController {
 
     @RequestMapping(value = "/vehicle", method = RequestMethod.GET)
     public @ResponseBody
-    List<Vehicle> getAllVehicles() throws Exception {
+    List<Vehicle> getAllVehicles() {
         return vehicleRepository.findAll();
+    }
+
+    @RequestMapping(value = "/vehicle/plant/{plant}", method = RequestMethod.GET)
+    public @ResponseBody
+    List<Vehicle> getAllVehiclesByPlant(@PathVariable String plant) {
+        return vehicleRepository.findByPlant(plant);
     }
 
     @RequestMapping(value = "/vehicle/process/{process}/plant/{plant}/status", method = RequestMethod.GET)
