@@ -9,4 +9,5 @@ public interface StatusRepository extends JpaRepository<Status, Integer> {
 
     List<Status> findByPlant_PlantIdAndProcess_ProcessId(String plantId, String processId);
 
+    Status findFirstByPlant_PlantIdAndProcess_ProcessIdOrderBySequenceAsc(String plantId, String processId);
 }

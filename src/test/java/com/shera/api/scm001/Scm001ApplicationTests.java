@@ -1,14 +1,13 @@
 package com.shera.api.scm001;
 
-import com.shera.api.scm001.dao.plant.Plant;
-import com.shera.api.scm001.dao.process.Process;
 import com.shera.api.scm001.dao.process.ProcessRepository;
-import com.shera.api.scm001.dao.status.Status;
 import com.shera.api.scm001.dao.status.StatusRepository;
-import com.shera.api.scm001.dao.vehicle.Vehicle;
 import com.shera.api.scm001.dao.vehicle.VehicleRepository;
-import com.shera.api.scm001.dao.vehicleStatus.VehicleStatus;
 import com.shera.api.scm001.dao.vehicleStatus.VehicleStatusRepository;
+import com.shera.api.scm001.util.Scm001Util;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,54 +28,24 @@ public class Scm001ApplicationTests {
     private VehicleStatusRepository vehicleStatusRepository;
 
     @Test
-    public void contextLoads() {
+    public void contextLoads() throws ParseException {
 
 //        System.out.println("----------------- TEST -----------------");
 //
-//        for (Status status : statusRepository.findAll()) {
-//            System.out.println("status process name: " + status.getProcess().getName());
-//        }
-//        System.out.println("----------------- TEST Create Vehicle -----------------");
-//        Vehicle vehicle = new Vehicle();
-//        vehicle.setLicense("ทด-4321");
-//        vehicle.setTransporterName("อิอิ");
-//        vehicle.setTransporterCompany("JIJIJIJIJI");
-//        vehicle.setProduct("กระเบี้ยง");
-//        vehicle.setPlant("MF13");
-//        vehicle.setProcess("SA");
+//        Scm001Util scm001Util = new Scm001Util();
 //
-//        vehicle = vehicleRepository.save(vehicle);
-//        System.out.println("vehicle: " + vehicle.toString());
-//        System.out.println("----------------- TEST Create VehicleStatus -----------------");
+//        String referenceId = "MF13";
 //
-//        VehicleStatus vehicleStatus = new VehicleStatus();
-//        Status status = new Status();
-//        status.setStatusId(4);
-//        Process process = new Process();
-//        process.setProcessId("SA");
-//        process.setName("Sales");
+//        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+//        String date = format.format(new Date());
 //
-//        status.setProcess(process);
-//        status.setName("ชั่งออก");
-//        status.setDuration(15);
-//        status.setSequence(4);
+//        referenceId += "-" + date + String.format("%06d", 12);
 //
-//        Plant plant = new Plant();
-//        plant.setPlantId("MF13");
-//        plant.setName("ลพบุรี");
+//        System.out.println("referenceId: " + referenceId);
 //
-//        status.setPlant(plant);
-//
-//        vehicleStatus.setStatus(status);
-//        vehicleStatus.setVehicleId(vehicle.getVehicleId());
-//        vehicleStatus = vehicleStatusRepository.save(vehicleStatus);
-//        System.out.println("vehicleStatus: " + vehicleStatus.toString());
-//
-//        System.out.println("----------------- TEST Update Vehicle -----------------");
-//        vehicle.setVehicleStatus(vehicleStatus);
-//        vehicle = vehicleRepository.save(vehicle);
-//        System.out.println("vehicle: " + vehicle.toString());
-
+//        Date date2 = new Date();
+//        String modifiedDate = new SimpleDateFormat("yyyy-MM-dd").format(date2);
+        System.out.println("Count: " + vehicleRepository.countByCreatedDate(new Date()));
     }
 
 }

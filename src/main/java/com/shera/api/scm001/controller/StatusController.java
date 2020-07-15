@@ -36,6 +36,12 @@ public class StatusController {
         return statusRepository.findByPlant_PlantIdAndProcess_ProcessId(plant, process);
     }
 
+    @RequestMapping(value = "/status/plant/{plant}/process/{process}/first", method = RequestMethod.GET)
+    public @ResponseBody
+    Status getFirstStatusesByPlantAndProcess(@PathVariable String plant, @PathVariable String process) {
+        return statusRepository.findFirstByPlant_PlantIdAndProcess_ProcessIdOrderBySequenceAsc(plant, process);
+    }
+
     @RequestMapping(value = "/status", method = RequestMethod.POST)
     public @ResponseBody
     String createStatus(@RequestBody Status statusBody) {

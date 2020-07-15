@@ -37,7 +37,8 @@ public class Vehicle {
     private double weightIn;
     private double weightOut;
     private double weightNet;
-    private int weightDifPercent;
+    private int weightDifMin;
+    private int weightDifMax;
     private String palleteNumber;
     private double weightPallete;
     private boolean isSpecialRelease;
@@ -50,11 +51,23 @@ public class Vehicle {
 
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
+    private Date publicationDate;
+
+    @CreationTimestamp
+    @Temporal(TemporalType.TIME)
+    private Date publicationTime;
+
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
     @UpdateTimestamp
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updatedDate;
+
+    private boolean flagPrintIn;
+    private boolean flagPrintOut;
+    private boolean completed;
 
     public Vehicle() {
     }
@@ -211,12 +224,20 @@ public class Vehicle {
         this.weightNet = weightNet;
     }
 
-    public int getWeightDifPercent() {
-        return weightDifPercent;
+    public int getWeightDifMin() {
+        return weightDifMin;
     }
 
-    public void setWeightDifPercent(int weightDifPercent) {
-        this.weightDifPercent = weightDifPercent;
+    public void setWeightDifMin(int weightDifMin) {
+        this.weightDifMin = weightDifMin;
+    }
+
+    public int getWeightDifMax() {
+        return weightDifMax;
+    }
+
+    public void setWeightDifMax(int weightDifMax) {
+        this.weightDifMax = weightDifMax;
     }
 
     public String getPalleteNumber() {
@@ -267,6 +288,22 @@ public class Vehicle {
         this.vehicleStatus = vehicleStatus;
     }
 
+    public Date getPublicationDate() {
+        return publicationDate;
+    }
+
+    public void setPublicationDate(Date publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
+    public Date getPublicationTime() {
+        return publicationTime;
+    }
+
+    public void setPublicationTime(Date publicationTime) {
+        this.publicationTime = publicationTime;
+    }
+
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -283,9 +320,33 @@ public class Vehicle {
         this.updatedDate = updatedDate;
     }
 
-    @Override
-    public String toString() {
-        return "Vehicle{" + "vehicleId=" + vehicleId + ", referenceId=" + referenceId + ", process=" + process + ", plant=" + plant + ", product=" + product + ", company=" + company + ", transporterType=" + transporterType + ", transporterCompany=" + transporterCompany + ", transporterName=" + transporterName + ", transporterPhone=" + transporterPhone + ", vehicleType=" + vehicleType + ", license=" + license + ", incoterm=" + incoterm + ", documentNumber=" + documentNumber + ", weightFromDocument=" + weightFromDocument + ", reasonNotInputWeight=" + reasonNotInputWeight + ", weightIn=" + weightIn + ", weightOut=" + weightOut + ", weightNet=" + weightNet + ", weightDifPercent=" + weightDifPercent + ", palleteNumber=" + palleteNumber + ", weightPallete=" + weightPallete + ", isSpecialRelease=" + isSpecialRelease + ", reasonSpecialRelease=" + reasonSpecialRelease + ", shipment=" + shipment + ", vehicleStatus=" + vehicleStatus.toString() + ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + '}';
+    public boolean isFlagPrintIn() {
+        return flagPrintIn;
     }
 
+    public void setFlagPrintIn(boolean flagPrintIn) {
+        this.flagPrintIn = flagPrintIn;
+    }
+
+    public boolean isFlagPrintOut() {
+        return flagPrintOut;
+    }
+
+    public void setFlagPrintOut(boolean flagPrintOut) {
+        this.flagPrintOut = flagPrintOut;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" + "vehicleId=" + vehicleId + ", referenceId=" + referenceId + ", process=" + process + ", plant=" + plant + ", product=" + product + ", company=" + company + ", transporterType=" + transporterType + ", transporterCompany=" + transporterCompany + ", transporterName=" + transporterName + ", transporterPhone=" + transporterPhone + ", vehicleType=" + vehicleType + ", license=" + license + ", incoterm=" + incoterm + ", documentNumber=" + documentNumber + ", weightFromDocument=" + weightFromDocument + ", reasonNotInputWeight=" + reasonNotInputWeight + ", weightIn=" + weightIn + ", weightOut=" + weightOut + ", weightNet=" + weightNet + ", weightDifMin=" + weightDifMin + ", weightDifMax=" + weightDifMax + ", palleteNumber=" + palleteNumber + ", weightPallete=" + weightPallete + ", isSpecialRelease=" + isSpecialRelease + ", reasonSpecialRelease=" + reasonSpecialRelease + ", shipment=" + shipment + ", vehicleStatus=" + vehicleStatus + ", publicationDate=" + publicationDate + ", publicationTime=" + publicationTime + ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + ", flagPrintIn=" + flagPrintIn + ", flagPrintOut=" + flagPrintOut + ", completed=" + completed + '}';
+    }
+    
 }

@@ -22,7 +22,9 @@ public class VehicleStatus {
     @OneToOne
     @JoinColumn(name = "statusId")
     private Status status;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date estimateTime;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date actualTime;
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
